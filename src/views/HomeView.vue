@@ -1,0 +1,272 @@
+<script setup>
+import { ref } from 'vue'
+
+const activeSection = ref('')
+
+function showSection(section) {
+  activeSection.value = section
+}
+</script>
+
+<template>
+  <div class="app">
+    <header>
+      <img
+        class="logo"
+        src="data:image/jpeg;base64,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"
+        alt="image"
+      />
+      <h1>Imecode Academy</h1>
+    </header>
+    <!-- Navigation -->
+    <nav class="nav">
+      <button @click="showSection('login')">Home</button>
+      <button @click="showSection('register')">Dashboard</button>
+      <button @click="showSection('pricing')">Profile</button>
+    </nav>
+
+    <!-- Full screen sections -->
+    <section v-if="activeSection === 'login'" class="screen"></section>
+
+    <section v-if="activeSection === 'register'" class="screen">Dashboard Content</section>
+
+    <section v-if="activeSection === 'pricing'" class="screen">Profile Content</section>
+  </div>
+  <div class="get-started">
+    <p class="p">
+      Welcome to Imecode Academy, your gateway to mastering coding skills and unlocking your
+      potential in the world of technology. Whether you're a beginner eager to learn the basics or
+      an experienced coder looking to enhance your skills, we have something for everyone.
+    </p>
+  </div>
+  <button @click="showSection('profile')">Profile</button>
+</template>
+
+<style>
+:root {
+  --color-background: rgb(229, 241, 245);
+  --color-danger: red;
+  --color-success: green;
+  --color-faint: gray;
+  --color-default: white;
+  --color-shadow: rgb(170, 170, 250);
+  --color-text-input: rgb(206, 206, 243);
+  --color-hover: rgb(122, 122, 228);
+  --color-orange: orange;
+}
+
+h1 {
+  color: black;
+}
+
+h2 {
+  color: blue;
+}
+
+h3 {
+  color: gray;
+}
+.p {
+  color: black;
+}
+
+.logo {
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  border-radius: 50%;
+}
+
+button {
+  border: none;
+  border-radius: 12.4%;
+  color: var(--color-default);
+  background-color: var(--color-faint);
+  width: auto;
+}
+* {
+  background-color: var(--color-background);
+}
+
+.screen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-background);
+  padding: 24px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.back {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+button {
+  width: 90px;
+  padding: 12px;
+  background: var(--color-hover);
+  border: none;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 300ms ease-out;
+  box-shadow: 0px 0px 10px 1px #bec8dd;
+}
+
+button:hover {
+  background: #2859c5;
+  border: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.container {
+  background-image: linear-gradient(to left, rgb(30, 30, 99), rgb(2, 2, 131));
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: larger;
+}
+
+.logo {
+  margin-bottom: 30px;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 35% 35% 35% 10%;
+}
+
+.Terms {
+  display: flex;
+  flex-direction: row;
+  color: rgb(79, 89, 133);
+}
+
+p {
+  color: #faf8f8;
+  margin-right: 6px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: max-content;
+}
+
+/* Use default checkbox appearance (match login.html) */
+#agreeTerms {
+  margin-right: 6px;
+  color: #f7f4f4;
+}
+
+.ai {
+  padding-left: 5px;
+  text-decoration: none;
+  color: #3b82f6;
+}
+
+.card p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background-color: #cfced3;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  color: #ffffff;
+  position: relative;
+}
+
+.input-group:hover {
+  background: #d3e0ee;
+  box-shadow: 0 0 5px 0.1px rgb(59, 54, 82);
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 16px;
+  color: #080808;
+  font-size: normal;
+}
+
+.input-status {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 120ms ease,
+    color 120ms ease;
+}
+.input-status.ok {
+  color: #16a34a;
+  opacity: 1;
+}
+.input-status.bad {
+  color: #dc2626;
+  opacity: 1;
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #f6f7f8;
+}
+
+.footer a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  text-decoration: wavy;
+}
+.Terms {
+  display: flex;
+  flex-direction: row;
+  color: rgb(249, 249, 252);
+}
+
+p {
+  color: #f7f4f4;
+  margin-right: 6px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: max-content;
+}
+label {
+  margin-left: 5px;
+}
+</style>
