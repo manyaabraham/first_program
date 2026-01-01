@@ -1,3 +1,16 @@
+:root {
+  --color-background: rgb(166, 179, 248) ;
+  --color-danger: red;
+  --color-success: green;
+  --color-faint: gray;
+  --color-default: white;
+  --color-shadow: rgb(170, 170, 250);
+  --color-text-input: rgb(206, 206, 243);
+  --color-button: rgb(22, 22, 175);
+  --color-orange: orange;
+  --color-hover: rgb(143, 143, 184);
+}
+
 *{
   margin: 0;
   padding: 0;
